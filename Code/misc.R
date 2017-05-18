@@ -278,20 +278,20 @@ train_all_models = function(x, features){
 
 train_all_models_with_feature_selection = function(train_set,features) {
   
-  gbmFit = mr_tuning(train_set,features)
-  gbmFit_features = feature_var_imp(gbmFit, 10)
   gbmFit = gbm_tuning(train_set,features)
+  gbmFit_features = feature_var_imp(gbmFit, 20)
+  gbmFit = gbm_tuning(train_set,gbmFit_features)
   
   svmFit = svm_tuning(train_set,features)
   
   nnetFit = nnet_tuning(train_set,features)
   
   mrFit = mr_tuning(train_set,features)
-  mrFit_features = feature_var_imp(mrFit, 10)
+  mrFit_features = feature_var_imp(mrFit, 20)
   mrFit = mr_tuning(train_set,mrFit_features) 
   
   rfFit = rf_tuning(train_set,features)
-  rfFit_features = feature_var_imp(rfFit, 10)
+  rfFit_features = feature_var_imp(rfFit, 20)
   rfFit = rf_tuning(train_set,rfFit_features)
   
   resamps <- resamples(list(GBM = gbmFit, SVM = svmFit, NNET = nnetFit, MR = mrFit, RF = rfFit))

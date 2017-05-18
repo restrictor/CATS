@@ -13,6 +13,8 @@
 ########################################################################################
 ########################################################################################
 
+#Pulling from R
+
 # clear environment and load source files
 source("code/misc.R")
 
@@ -182,9 +184,14 @@ summary(results_Triple)[3]$statistics$Accuracy
 
 ##################### visualize the preformance of the models ##############################
 
-
-models
-
+models[[1]][[4]]
+models[[1]][[4]]$coefnames
+models[[1]][[3]]
+models[[1]][[3]]$coefnames
+models[[1]][[2]]
+models[[1]][[2]]$coefnames
+models[[1]][[1]]
+models[[1]][[1]]$coefnames
 for (i in 1:10) {
   for (j in 1:5) {
     name = paste(i,"_",j,".pkl", sep="")
