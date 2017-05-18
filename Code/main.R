@@ -17,7 +17,8 @@
 source("code/misc.R")
 
 load_depend()
-
+# get the train data and write to WEKA file
+combine = Load_labeled_Data()
 
 ########################################################################################
 
@@ -69,8 +70,7 @@ HERHR_TRIPLE_J48 <- c("V2185","V2026","V1657","V736","V1688","V306","V736","V59"
 ########################################################################################
 
 
-# get the train data and write to WEKA file
-combine = Load_labeled_Data()
+
 
 ################################## FEATURE SELECTION ####################################
 
