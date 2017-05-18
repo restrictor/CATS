@@ -277,10 +277,10 @@ train_all_models = function(x, features){
 }
 
 train_all_models_with_feature_selection = function(train_set,features) {
-  
+
+  gbmFit = rf_tuning(train_set,features)
+  gbmFit_features = feature_var_imp(gbmFit, 20)   
   gbmFit = gbm_tuning(train_set,features)
-  gbmFit_features = feature_var_imp(gbmFit, 20)
-  gbmFit = gbm_tuning(train_set,gbmFit_features)
   
   svmFit = svm_tuning(train_set,features)
   

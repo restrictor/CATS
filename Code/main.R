@@ -183,7 +183,8 @@ summary(results_Triple)[3]$statistics$Accuracy
 
 
 ##################### visualize the preformance of the models ##############################
-
+models[[1]][[5]]
+models[[1]][[5]]$coefnames
 models[[1]][[4]]
 models[[1]][[4]]$coefnames
 models[[1]][[3]]
