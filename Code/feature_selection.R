@@ -12,6 +12,10 @@ filter_Var_selection = function(x,number_of_features) {
   
   fill=filterVarImp(x[,2:ncol(x)],x[,1],nonpara = FALSE)
   fill = sort(rowMeans(fill), decreasing = T)
+  lenvar <- length(fill)
+  if (number_of_features > lenvar) {
+    number_of_features = lenvar
+  }
   features <- names(fill[1:number_of_features])
   
   return(features)
