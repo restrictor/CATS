@@ -422,3 +422,15 @@ for (i in 1:length(predfinal)) {
   }
 }
 predfinal
+
+
+################################## Features Inspection ################################################
+Features_RF_Final <- rfFit$coefnames
+
+svmFit$bestTune
+Features_HERTN_Final <- svmFit$coefnames
+svmFit$modelInfo
+svmFit$results
+svmFit$modelInfo
+svmFit$maximize
+svmFit
