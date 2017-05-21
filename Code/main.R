@@ -211,6 +211,16 @@ write.table(pred, file="pred.txt")
 write.table(pred2, file="pred2.txt")
 write.table(results, file="results.txt")  #### CONCLUSSION ####  --> BEST ARE SVM AND NNET WITH 85%
 
+
+colnames(accur) <- c("NB","SVM","NN","MR","RFt")
+boxplot(accur,xlab='models', ylab='accuracy',main="Accuracy (average) for each classifier")
+
+coll = rainbow(5)
+colnames_fix = c("NB","SVM","NN","MR","RFt")
+plot(0,0, xlim = c(0,10), ylim = c(0.7,1), main="Accuracy (average) for each classifier", xlab = "cross validation", ylab = "accuracy")
+for ( i in seq(1,length( accur ),1) ) lines(accur[,i],ylab=names(accur[i]),type="l", col = coll[i])
+legend("bottomright",legend=colnames_fix,col=rainbow(5),pch=1)
+
 # Doing two times the same model (3 classes) --> [2](2 classes: HR & TR)
 same_pred = pred
 for (i in 1:length(pred[,1])) {

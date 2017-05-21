@@ -406,6 +406,7 @@ plot_results = function(accur, results) {
   coll = rainbow(5)
   plot(0,0, xlim = c(0,10), ylim = c(0.7,1))
   for ( i in seq(1,length( accur ),1) ) lines(accur[,i],ylab=names(accur[i]),type="l", col = coll[i])
-  par(mfrow=c(1,1))
   legend("bottomright",legend=colnames(accur),col=rainbow(5),pch=1)
+  par(mfrow=c(1,1))
+  
 }
